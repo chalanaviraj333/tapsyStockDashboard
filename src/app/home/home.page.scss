@@ -1,0 +1,40 @@
+ion-card {
+  box-shadow: 1px 1px 5px 0px rgba(84, 6, 156, 0.315);
+  border-radius: 15px;
+  margin: 15px;
+}
+
+ion-card-subtitle {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+
+
+#topMenu {
+  background-color: #e8ddfd;
+  border-radius: 10px;
+  
+}
+
+#topMenuButtons {
+  text-align: center;
+}
+
+ion-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+// #homePage {
+//   font-family: Georgia, 'Times New Roman', Times, serif;
+// }
+
+#bodycontents {
+  margin-top: 20px;
+}
+
+
+.child {
+  display: flex;
+  justify-content: center;
+}

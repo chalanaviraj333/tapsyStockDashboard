@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="fontstyle">allcarmodels</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="carSelectedYears" *ngFor="let carbrand of brands">
+      <ion-chip (click)="_selectBrand(carbrand.name)" color="dark">
+        <ion-label class="fontstyle" color="success">{{carbrand.name}}</ion-label>
+      </ion-chip>
+    </div>
+
+    <ion-card>
+      <h2 class="fontstyle">Total Number of Car Models: {{selectedmodels.length}}</h2>
+    </ion-card>
+
+    <ion-card *ngFor="let item of selectedmodels">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-card-subtitle>{{item.brand}}</ion-card-subtitle>
+          <ion-card-title color="danger">{{item.model}}</ion-card-title>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="fontstyle">
+              Start Year
+            </ion-label>
+            <ion-input class="fontstyle" type="number" [(ngModel)]="item.startyear">
+            </ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="fontstyle">
+              End Year
+            </ion-label>
+            <ion-input class="fontstyle" type="number" [(ngModel)]="item.endyear">
+            </ion-input>
+          </ion-col>
+          <ion-col size="1">
+            <ion-button class="fontstyle" (click)="onClickSubmitButton(item.key, item.startyear,item.endyear)">
+              SUBMIT
+            </ion-button>
+
+          </ion-col>
+          <ion-col size="3">
+            <img src="{{item.icon}}" height="100px" width="100px">
+          </ion-col>
+          <ion-col>
+            <ion-button color="danger" class="fontstyle" (click)="onClickDeleteModel(item.key)">DELETE THIS MODEL </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3" size-lg="6" offset-lg="3">
+        <ion-card *ngFor="let model of models">
+    <ion-card-content>
+
+      <ion-row no-padding>
+        <ion-col size="7">
+          <ion-card-subtitle class="primarytext" color="danger">{{model.brand}}</ion-card-subtitle>
+          <ion-card-title class="primarytext fontsize">{{model.model}}</ion-card-title>
+
+          <ion-input value="{{model.startyear}}"></ion-input>
+          <ion-input></ion-input>
+
+          <ion-button>Submit Changes</ion-button>
+        </ion-col>
+        <ion-col size="5">
+          <img src="{{model.icon}}">
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!-- <ion-virtual-scroll [items]="selectedmodels" approxItemHeight="320px">
+    <ion-card *virtualItem="let item; let itemBounds = bounds;">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="2">
+            <ion-card-subtitle>{{item.brand}}</ion-card-subtitle>
+          <ion-card-title color="danger">{{item.model}}</ion-card-title>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="fontstyle">
+              Start Year
+            </ion-label>
+            <ion-input class="fontstyle" type="number" [(ngModel)]="item.startyear">
+            </ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label class="fontstyle">
+              End Year
+            </ion-label>
+            <ion-input class="fontstyle" type="number" [(ngModel)]="item.endyear">
+            </ion-input>
+          </ion-col>
+          <ion-col size="1">
+            <ion-button class="fontstyle" (click)="onClickSubmitButton(item.key, item.startyear,item.endyear)">
+              SUBMIT
+            </ion-button>
+
+          </ion-col>
+          <ion-col size="3">
+            <img src="{{item.icon}}" height="100px" width="100px">
+          </ion-col>
+          <ion-col>
+            <ion-button color="danger" class="fontstyle" (click)="onClickDeleteModel(item.key)">DELETE THIS MODEL </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+  </ion-virtual-scroll> -->
+
+</ion-content>

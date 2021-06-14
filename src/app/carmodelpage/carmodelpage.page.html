@@ -1,0 +1,208 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="homePage()">Stock DashBoard</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="loginbutton()">
+        Login
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-content [fullscreen]="true">
+
+    <!-- <ion-grid>
+  
+      <div id="topMenu">
+        <ion-row>
+          <ion-col id="topMenuButtons">
+            <ion-button id="menuButtonContent" fill="clear" (click)="_addnewBrandButton()">Add a New Brand</ion-button>
+            <ion-button id="menuButtonContent" fill="clear" (click)="_addnewModelButton()">Add a New Model</ion-button>
+  
+          </ion-col>
+  
+        </ion-row>
+  
+      </div>
+    </ion-grid> -->
+    <h3>Add New Brand</h3>
+    <app-addcarbrand></app-addcarbrand>
+
+    <br>
+
+    <h3>Add New Model</h3>
+    <app-addmodel></app-addmodel>
+
+    <br>
+
+    <!-- <app-editcarmodel></app-editcarmodel> -->
+
+
+    <h3>Add New Model</h3>
+    <app-addmodel></app-addmodel>
+
+
+    <div class="allcarbrands">
+
+      <div class="carSelectedYears" *ngFor="let carbrand of carbrands">
+        <ion-chip (click)="_selectBrand(carbrand)" color="dark">
+          <ion-label>{{carbrand}}</ion-label>
+        </ion-chip>
+      </div>
+
+
+      <ion-card *ngFor="let model of printmodels">
+        <ion-card-content>
+
+          <ion-row no-padding>
+            <ion-col size="7">
+              <ion-card-title>{{model.brand}} {{model.model}}</ion-card-title>
+
+              <div class="carYears" *ngFor="let year of model.modelyears">
+                <ion-chip (click)="_selectYear(year, model.key)">
+                  <ion-label>{{year}}</ion-label>
+                </ion-chip>
+              </div>
+
+              <hr>
+              <ion-label color="danger">Selected Years:</ion-label>
+
+              <div class="carSelectedYears" *ngFor="let year of model.selectedyears">
+                <ion-chip color="danger">
+                  <ion-label>{{year}}</ion-label>
+                </ion-chip>
+              </div>
+
+              <br>
+              <br>
+
+              <ion-grid class="cardetails">
+                <h4>CAR DETAILS / PRICES</h4>
+        
+                <ion-item lines="none">
+                  <ion-label>
+                    <b>All Key Lost Method:</b>
+                  </ion-label>
+                    <ion-input [(ngModel)]="model.programmingMethod" clearInput></ion-input>
+                </ion-item>
+
+
+                <ion-item lines="none">
+                  <ion-label>
+                    <b>Gaining Access Method:</b>
+                  </ion-label>
+                    <ion-input [(ngModel)]="model.accessMethod" clearInput></ion-input>
+                </ion-item>
+        
+                <ion-row class="pricetableHeader">
+                  <ion-col size="6"></ion-col>
+                  <ion-col size="3">location</ion-col>
+                  <ion-col size="3">shop</ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">All Key Lost Remote</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLostRemoteLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLostRemoteShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">All Key Lost MFK</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLostMFKLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLostMFKShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">Spare Remote</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.spareRemoteLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.spareRemoteShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">Spare MFK</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.spareMFKLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.spareMFKShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">Ignition Repair</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.ignitionRepairLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.ignitionRepairShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">Key Shell Repair</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.keyShellLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.keyShellShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">Gaining Access</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.gainingAccessLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.gainingAccessShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+                <ion-row class="pricetableContent">
+                  <ion-col size="6">All Lock Change</ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLockChangeLocation"></ion-input>
+                  </ion-col>
+                  <ion-col size="3">
+                    <ion-input type="number" class="tableInput" [(ngModel)]="model.allLockChangeShop"></ion-input>
+                  </ion-col>
+                </ion-row>
+        
+              </ion-grid>
+
+            </ion-col>
+            <ion-col size="5">
+              <img src="{{model.icon}}">
+
+              <div class="submitButton">
+                <ion-button shape="round" fill="solid" (click)="submitlicked(model.key)">Submit</ion-button>
+              </div>
+
+              <div id="lowStockIndicate">
+                <ion-chip *ngIf="priceSaved" color="danger">
+                  <ion-label color="success">Price Added</ion-label>
+                </ion-chip>
+          
+              </div>
+              
+            </ion-col>
+
+            
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>

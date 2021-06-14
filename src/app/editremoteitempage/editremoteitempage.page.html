@@ -1,0 +1,184 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Remote Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-card>
+      <ion-row>
+        <ion-col size-md="9">
+          <b>Tapsy Code: {{selectedremote.tapsycode}} </b>
+          <h2><b>Box No: {{selectedremote.boxnumber}}</b></h2>
+        </ion-col>
+        <ion-col side-md="3">
+          <img src="{{selectedremote.image}}" width="120" height="120"/>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+
+
+    <!-- <ion-item>
+      <ion-label position="floating">
+        Remote Blade
+      </ion-label>
+      <ion-input [(ngModel)]="remote_blade"></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">
+        Frequency
+      </ion-label>
+      <ion-input [(ngModel)]="remote_frequency"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        Remote Chip
+      </ion-label>
+      <ion-input [(ngModel)]="remote_chip"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        USD Price
+      </ion-label>
+      <ion-input [(ngModel)]="usdPrice"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label position="floating">
+        Buttons
+      </ion-label>
+      <ion-input [(ngModel)]="remote_buttons"></ion-input>
+    </ion-item> -->
+
+    <!-- Remote Buttons -->
+    <ion-list>
+      <ion-radio-group [(ngModel)]="remote_buttons">
+        <ion-list-header>
+          <ion-label color="primary">Remote Buttons</ion-label>
+        </ion-list-header>
+
+        <ion-row>
+          <ion-col size-md="6">
+            <ion-item>
+              <ion-label>1 Buttons</ion-label>
+              <ion-radio slot="start" value=1></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>2 Buttons</ion-label>
+              <ion-radio slot="start" value=2></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>3 Buttons</ion-label>
+              <ion-radio slot="start" value=3></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>4 Buttons</ion-label>
+              <ion-radio slot="start" value=4></ion-radio>
+            </ion-item>
+          </ion-col>
+
+
+        <ion-col size-md="6">
+          <ion-item>
+            <ion-label>5 Buttons</ion-label>
+            <ion-radio slot="start" value=5></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>6 Buttons</ion-label>
+            <ion-radio slot="start" value=6></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>7 Buttons</ion-label>
+            <ion-radio slot="start" value=7></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>8 Buttons</ion-label>
+            <ion-radio slot="start" value=8></ion-radio>
+          </ion-item>
+
+        </ion-col>
+      </ion-row>
+
+      </ion-radio-group>
+    </ion-list>
+
+
+    <!-- Battery -->
+    <ion-list>
+      <ion-radio-group [(ngModel)]="remote_battery">
+        <ion-list-header>
+          <ion-label color="primary">Remote Battery</ion-label>
+        </ion-list-header>
+
+        <ion-row>
+          <ion-col size-md="6">
+            <ion-item>
+              <ion-label>CR2032</ion-label>
+              <ion-radio slot="start" value="CR2032"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>CR2450</ion-label>
+              <ion-radio slot="start" value="CR2450"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>CR1220</ion-label>
+              <ion-radio slot="start" value="CR1220"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>CR1616</ion-label>
+              <ion-radio slot="start" value="CR1616"></ion-radio>
+            </ion-item>
+          </ion-col>
+
+
+        <ion-col size-md="6">
+          <ion-item>
+            <ion-label>CR1620</ion-label>
+            <ion-radio slot="start" value="CR1620"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>CR1632</ion-label>
+            <ion-radio slot="start" value="CR1632"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>CR2016</ion-label>
+            <ion-radio slot="start" value="CR2016"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>CR2025</ion-label>
+            <ion-radio slot="start" value="CR2025"></ion-radio>
+          </ion-item>
+
+        </ion-col>
+      </ion-row>
+
+      </ion-radio-group>
+    </ion-list>
+
+    <br>
+    <ion-button shape="round" size="block" (click)="onClickSave()">SAVE</ion-button>
+
+  </ion-grid>
+</ion-content>
+
+

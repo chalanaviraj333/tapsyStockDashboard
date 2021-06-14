@@ -1,0 +1,7 @@
+{
+  "name": "stockDashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

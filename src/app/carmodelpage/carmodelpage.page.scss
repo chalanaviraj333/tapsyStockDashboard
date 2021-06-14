@@ -1,0 +1,101 @@
+ion-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #topMenu {
+    background-color: #e8ddfd;
+    border-radius: 10px;
+    
+  }
+  
+  #topMenuButtons {
+    text-align: center;
+  }
+
+  ion-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+
+  #menuButtonContent {
+    border-style: solid;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+      
+}
+
+h3 {
+  text-align: center;
+}
+
+ion-card-subtitle {
+  text-align: center;
+}
+
+ion-card {
+  box-shadow: 1px 1px 5px 0px rgba(84, 6, 156, 0.315);
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.allcarbrands {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.carYears {
+  display: inline-block;
+}
+
+.carSelectedYears {
+  display: inline-block;
+}
+
+hr {
+  border: 2px solid black !important;
+  height: 2px !important;
+  border-radius: 15px !important;
+  width: 500px !important;
+  display: block !important;
+  font-size: 2em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cardetails {
+  border-color: #149655;
+  border-style: solid;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 0px rgba(84, 6, 156, 0.315);
+  margin-bottom: 10px;
+}
+
+.pricetableHeader{
+  border-bottom: 1px solid black;
+}
+
+.pricetableContent{
+  border-bottom: 1px solid rgba(161, 161, 161, 0.541);
+}
+
+.tableInput {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 18px;
+}
+
+.submitButton {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+#lowStockIndicate {
+  margin-top: 1rem;
+  text-align: center;
+}

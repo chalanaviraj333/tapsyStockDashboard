@@ -1,0 +1,66 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Remote Shell</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="refreshImagesButton()" >
+        <ion-icon slot="icon-only" ios="refresh-outline" md="refresh-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-card>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Tapsy Code</ion-label>
+      <ion-input placeholder="TAP112-123" type="text" ngModel name="tapsycode" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Box Number</ion-label>
+      <ion-input placeholder="105" type="number" ngModel name="boxnumber" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Blade</ion-label>
+      <ion-input placeholder="HU100" type="text" ngModel name="blade" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Buttons</ion-label>
+      <ion-input placeholder="3" type="number" ngModel name="buttons" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Notes</ion-label>
+      <ion-input placeholder="Shell with no slot" type="text" ngModel name="notes"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="danger" position="stacked">Compitable Brands</ion-label>
+      <ion-select multiple="true" ngModel name="compitablebrands">
+        <ion-select-option *ngFor="let brand of brands">{{brand}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-button class="doneButton" type="submit" expand="block">DONE</ion-button>
+    </ion-card>
+  </form>
+
+  <ion-card *ngFor="let remoteshell of newRemoteShells">
+    <ion-grid>
+      <ion-card-content>
+        <ion-row no-padding>
+          <ion-col size="6" text-center>
+            <ion-card-subtitle id="boxNumber">Tapsy Code: {{remoteshell.tapsycode}}</ion-card-subtitle>
+            <ion-card-subtitle color="medium">BOX NO:{{remoteshell.boxnumber}}</ion-card-subtitle>
+            <ion-card-subtitle color="medium">Blade:{{remoteshell.blade}}</ion-card-subtitle>
+          </ion-col>
+          <ion-col size="6">
+            <img src="{{remoteshell.image}}" width="120" height="120" />
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-grid>
+    <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+  </ion-card>
+</ion-content>

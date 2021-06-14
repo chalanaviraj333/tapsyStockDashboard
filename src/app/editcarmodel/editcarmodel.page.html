@@ -1,0 +1,43 @@
+<h3>{{carbrands.length}}</h3>
+
+<!-- <ion-card *ngFor="let carbrand of carbrands">
+  <ion-title>{{carbrand}}</ion-title>
+</ion-card> -->
+
+<div id="container">
+  <ion-chip *ngFor="let carbrand of carbrands" (click)="brandclickButton(carbrand)">
+    <ion-label color="danger">{{carbrand}}</ion-label>
+  </ion-chip>
+
+</div>
+
+
+<ion-grid>
+  <ion-row>
+  <ion-col size="6" class="ion-no-padding" *ngFor="let selectedbrandModel of selectedbrandModels" (click)="onSelect(selectedbrandModel)">
+    <ion-card class="ion-activatable ripple-parent">
+        <ion-card-content>
+              {{selectedbrandModel.model}}
+        </ion-card-content>
+        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+    </ion-card>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+
+  <ion-card>
+  <ion-item>
+    <ion-label color="danger" position="stacked">Car Model</ion-label>
+    <ion-input placeholder="Ranger" type="text" [(ngModel)]="modelName" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="danger" position="stacked">Start Year</ion-label>
+    <ion-input type="number" [(ngModel)]="modelStartYear" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="danger" position="stacked">End Year</ion-label>
+    <ion-input placeholder="2015" type="number" [(ngModel)]="modelEndYear" required></ion-input>
+  </ion-item>
+  <br>
+  <ion-button class="doneButton" (click)="doneclicked()" expand="block">DONE</ion-button>
+  </ion-card>

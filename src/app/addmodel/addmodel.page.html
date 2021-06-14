@@ -1,0 +1,25 @@
+ <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-card>
+    <ion-item>
+      <ion-label class="fontClass" color="danger" position="stacked">Car Brand</ion-label>
+      <ion-select ngModel name="carbrand">
+        <ion-select-option class="fontClass" *ngFor="let brand of brands">{{brand}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="fontClass" color="danger" position="stacked">Car Model</ion-label>
+      <ion-input class="fontClass" placeholder="Ranger" type="text" ngModel name="carmodel" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="fontClass" color="danger" position="stacked">Start Year</ion-label>
+      <ion-input class="fontClass" placeholder="2005" type="number" ngModel name="startyear" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="fontClass" color="danger" position="stacked">End Year</ion-label>
+      <ion-input class="fontClass" placeholder="2015" type="number" ngModel name="endyear" required></ion-input>
+    </ion-item>
+    <br>
+    <ion-button class="fontClass" class="doneButton" type="submit" expand="block">DONE</ion-button>
+    </ion-card>
+  </form>

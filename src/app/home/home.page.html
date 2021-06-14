@@ -1,0 +1,207 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="homePage()">Stock DashBoard</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="loginButton()">
+        Login
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+
+    <div id="topMenu">
+      <ion-row>
+        <ion-col id="topMenuButtons">
+          <ion-button fill="clear" (click)="_carmodelsButton()">Cars</ion-button>
+          <ion-button fill="clear" (click)="_remoteButton()">Remotes</ion-button>
+          <ion-button fill="clear" (click)="_remoteShellButton()">Remote Shells</ion-button>
+          <ion-button fill="clear" (click)="_kdRemotesButton()">KD Remotes</ion-button>
+          <ion-button fill="clear" (click)="_kdBladesButton()">KD Blades</ion-button>
+          <ion-button fill="clear" (click)="_mfkKeysButton()">MFK Keys</ion-button>
+          <ion-button fill="clear" (click)="_garageRemotesButton()">Garage Remotes</ion-button>
+          <ion-button fill="clear" (click)="_remoteCircuitsButton()">Remote Circuit</ion-button>
+          <ion-button color="danger" fill="clear" (click)="_lowStockButton()">Low Stock</ion-button>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+
+    <div id="bodycontents">
+      <div class="child">
+        <ion-row>
+          <ion-card (click)="_carmodelsButton()">
+            <ion-card-content>
+              <img src="/assets/images/carmodels.png" width="200" height="200">
+              <ion-card-subtitle color="medium">Car Models</ion-card-subtitle>
+            </ion-card-content>
+
+          </ion-card>
+
+          <ion-card (click)="_remoteButton()">
+            <ion-card-content>
+              <img src="/assets/images/remotes.png" width="200" height="200">
+              <ion-card-subtitle color="medium">Remotes</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card (click)="_remoteShellButton()">
+            <ion-card-content>
+              <img src="/assets/images/remoteshell.png" width="200" height="200">
+              <ion-card-subtitle color="medium">Remote Shells</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card (click)="_kdRemotesButton()">
+            <ion-card-content>
+              <img src="/assets/images/kdremotes.png" width="200" height="200">
+              <ion-card-subtitle color="medium">KD Remotes</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-item routerLink="../addremote">
+              <ion-label>Add Remote</ion-label>
+            </ion-item>
+          </ion-card>
+
+        </ion-row>
+      </div>
+
+
+      <div class="child">
+        <ion-row>
+          <ion-card (click)="_kdBladesButton()">
+            <ion-card-content>
+              <img src="/assets/images/kdblades.png" width="200" height="200">
+              <ion-card-subtitle color="medium">KD Blades</ion-card-subtitle>
+            </ion-card-content>
+
+          </ion-card>
+          <ion-card (click)="_mfkKeysButton()">
+            <ion-card-content>
+              <img src="/assets/images/mfkkeys.png" width="200" height="200">
+              <ion-card-subtitle color="medium">MFK Keys</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+          <ion-card (click)="_garageRemotesButton()">
+            <ion-card-content>
+              <img src="/assets/images/garageremotes.png" width="200" height="200">
+              <ion-card-subtitle color="medium">Garage Remotes</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+          <ion-card (click)="_remoteCircuitsButton()">
+            <ion-card-content>
+              <img src="/assets/images/remotecircuits.png" width="200" height="200">
+              <ion-card-subtitle color="medium">Remote Circuits</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-item routerLink="../exportdata">
+              <ion-label>Export Data</ion-label>
+            </ion-item>
+          </ion-card>
+        </ion-row>
+
+      </div>
+      <ion-row>
+        <ion-button routerLink="../allcarmodels">
+            <ion-label>View/Edit All Car Models</ion-label>
+        </ion-button>
+        <ion-button routerLink="../editcarremotes">
+          <ion-label>View/Edit All Remotes</ion-label>
+      </ion-button>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+
+
+
+
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding" (click)="addCarBrand()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="success">ADD CAR BRAND</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding" (click)="addCarModel()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="success">ADD CAR MODEL</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding" (click)="addNewRemote()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="success">ADD NEW REMOTE</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding" (click)="addProgDetails()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="success">ADD PROG DETAILS</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding" (click)="editCarModel()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="danger">EDIT CAR MODEL</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding" (click)="editRemote()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="danger">EDIT CAR REMOTE</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" class="ion-no-padding" (click)="editCarDetails()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="danger">EDIT CAR DETAILS</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding" (click)="addRemoteShell()">
+        <ion-card class="ion-activatable ripple-parent">
+          <ion-card-content>
+            <ion-card-subtitle color="danger">ADD REMOTE SHELL</ion-card-subtitle>
+          </ion-card-content>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>
